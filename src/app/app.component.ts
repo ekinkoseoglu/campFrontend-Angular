@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; // Using ....
 
 @Component({
+  // [Component] attribute
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'northwind';
+  // public class AppComponent {....}
+  title: string = 'northwind';
+  user = 'Ekin Köseoğlu';
 }
