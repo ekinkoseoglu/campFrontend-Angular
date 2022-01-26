@@ -9,5 +9,5 @@ import { Component } from '@angular/core'; // Using ....
 export class AppComponent {
   // public class AppComponent {....}
   title: string = 'northwind';
-  user = 'Ekin Köseoğlu';
+  user: string = 'Ekin Köseoğlu';
 }

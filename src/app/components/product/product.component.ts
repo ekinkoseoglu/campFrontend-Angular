@@ -12,33 +12,27 @@ export class ProductComponent implements OnInit {
     categoryId: 1,
     unitPrice: 5,
   };
-  product2 = {
+  product2: any = {
     productId: 2,
-    productName: 'Notebook',
+    productName: 'Laptop',
     categoryId: 1,
     unitPrice: 5,
   };
   product3: any = {
     productId: 3,
-    productName: 'Smartphone',
+    productName: 'Mouse',
     categoryId: 1,
     unitPrice: 5,
   };
-  product4 = {
+  product4: any = {
     productId: 4,
     productName: 'Keyboard',
     categoryId: 1,
     unitPrice: 5,
   };
-  product5 = {
+  product5: any = {
     productId: 5,
-    productName: 'Monitor',
-    categoryId: 1,
-    unitPrice: 5,
-  };
-  product6 = {
-    productId: 6,
-    productName: 'Mouse',
+    productName: 'Camera',
     categoryId: 1,
     unitPrice: 5,
   };
@@ -49,7 +43,6 @@ export class ProductComponent implements OnInit {
     this.product3,
     this.product4,
     this.product5,
-    this.product6,
   ];
   constructor() {}
 
