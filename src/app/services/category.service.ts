@@ -1,26 +1,25 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Category } from '../models/category';
 import { ListResponseModel } from '../models/ListResponseModel';
-import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
-  apiUrl: string = 'https://localhost:44360/api/products/getall';
+export class CategoryService {
+  apiUrl: string = 'https://localhost:44360/api/categories/getall';
   constructor(private httpClient: HttpClient) {}
 
-  getProducts(): Observable<ListResponseModel<Product>> {
-    return this.httpClient.get<ListResponseModel<Product>>(this.apiUrl);
-    // .pipe(
-    // retry(3), /* Retry a failed request up to 3 times */
-    // catchError(this.handleError)
-    // );
+  getCategories(): Observable<ListResponseModel<Category>> {
+    return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl);
   }
+  // .pipe(
+  // retry(3), /* Retry a failed request up to 3 times */
+  // catchError(this.handleError)
+  // );
 
-  //          Error Handling with HttpClient->HttpErrorResponse
+  //          ERROR HANDLING WITH HttpClient->HttpErrorResponse
 
   // private handleError(err: HttpErrorResponse) {
   //   if (err.status === 0) {
