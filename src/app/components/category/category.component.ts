@@ -25,4 +25,13 @@ export class CategoryComponent implements OnInit {
   setCurrentCategory(category: Category) {
     this.currentCategory = category;
   }
+
+  getCurrentCategoryClass(category: Category) {
+    // change value of 'class' atribute of element that has setCurrentCategory() event binding
+    if (category == this.currentCategory) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
+    }
+  }
 }
