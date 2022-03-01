@@ -24,9 +24,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     // params = Parameters in Our Activated Route of Html Template
-    this.activatedRoute.params.subscribe((params) => {
-      if (params['categoryId']) {
-        this.getProductsByCategory(params['categoryId']);
+    this.activatedRoute.params.subscribe((parameter) => {
+      if (parameter['categoryId']) {
+        this.getProductsByCategory(parameter['categoryId']);
       } else {
         this.getProducts();
       }
