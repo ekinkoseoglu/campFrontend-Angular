@@ -6,13 +6,13 @@
   <input
     type="text"
     class="form-control"
-    [(ngModel)]="filterText"
+    [(ngModel)]="searchString"
     id="textFilter"
     placeholder="Search for products..."
   />
 </div>
-<div *ngIf="filterText.length > 2" class="alert alert-sucess">
-  You searched {{ filterText }}
+<div *ngIf="searchString.length > 2" class="alert alert-sucess">
+  You searched {{ searchString }}
 </div>
 
 <table *ngIf="dataLoaded == true" class="table">
@@ -24,14 +24,22 @@
       <th>Unit Price</th>
       <th>Price with KAV</th>
       <th>Units in Stock</th>
+      <th></th>
     </tr>
   </thead>
-  <tr *ngFor="let item of products | filter: filterText">
-    <td>{{ item.productId }}</td>
-    <td>{{ item.productName | uppercase }}</td>
-    <td>{{ item.categoryId }}</td>
-    <td>{{ item.unitPrice }}</td>
-    <td>{{ item.unitPrice | vatAdded: 10 | currency }}</td>
-    <td>{{ item.unitsInStock }}</td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let item of products | filter: searchString">
+      <td>{{ item.productId }}</td>
+      <td>{{ item.productName | uppercase }}</td>
+      <td>{{ item.categoryId }}</td>
+      <td>{{ item.unitPrice }}</td>
+      <td>{{ item.unitPrice | vatAdded: 10 | currency }}</td>
+      <td>{{ item.unitsInStock }}</td>
+      <td>
+        <button (click)="addToCart(item)" class="btn btn-success">
+          Add to cart
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>

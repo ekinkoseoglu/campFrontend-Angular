@@ -5,11 +5,11 @@ import { Product } from '../models/product';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-  transform(value: Product[], filterText: string): Product[] {
-    filterText = filterText ? filterText.toLocaleLowerCase() : '';
-    return filterText
-      ? value.filter(
-          (p) => p.productName.toLocaleLowerCase().indexOf(filterText) !== -1
+  transform(value: Product[], searchString: string): Product[] {
+    searchString = searchString ? searchString.toLocaleLowerCase() : ''; // Convert the whole Searching Filter text to lowercase if it exists.
+    return searchString
+      ? value.filter((p) =>
+          p.productName.toLocaleLowerCase().includes(searchString)
         )
       : value;
   }
