@@ -1,1 +1,21 @@
-<p>product-add works!</p>
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="card-title">Add Product</h5></div>
+      <div class="card-body">
+        <form [formGroup]="productAddForm">
+          <div class="form-group">
+            <input
+              type="text"
+              name=""
+              id="productName"
+              formControlName="productName"
+              class="form-control"
+              placeholder="Product Name"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
