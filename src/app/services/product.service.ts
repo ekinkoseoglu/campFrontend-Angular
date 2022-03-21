@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,10 @@ export class ProductService {
     // );
   }
 
+  add(product: Product): Observable<SingleResponseModel<Product>> {
+    let newPath = this.apiUrl + 'products/add';
+    return this.httpClient.post<SingleResponseModel<Product>>(newPath, product);
+  }
   //          Error Handling with HttpClient->HttpErrorResponse
 
   // private handleError(err: HttpErrorResponse) {
