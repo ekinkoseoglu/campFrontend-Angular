@@ -40,8 +40,6 @@ export class ProductAddComponent implements OnInit {
       this.productService.add(productModel).subscribe(
         // (Next) Callback of Subscribe
         (response) => {
-          console.log(response.message);
-
           this.toastrService.success('Product Has Added Successfully');
         }, // (error) (ErrorHttpResponse) Callback of Subscribe
         (errorResponse) => {
@@ -54,16 +52,13 @@ export class ProductAddComponent implements OnInit {
               this.toastrService.error(
                 errorResponse.error.ValidationErrors[i].ErrorMessage // HttpResponseError'un Error Object'inin ValidationErrors array propertysinin her bir "ErrorMessage" propertysinin değeri
               );
-              console.log(errorResponse.error.ValidationErrors); // HttpResponseError'un Error Object'inin ValidationErrors array propertysi
+              console.log(errorResponse.error.ValidationErrors); // HttpResponseError'un Error Object'inin ValidationErrors array propertysinin değeri Log'da görünüyor
             }
           }
-          // if (errorResponse.error.Error > 0) {
-          //   this.toastrService.error(errorResponse.error.Error);
-          // }
         }
       );
     } else {
-      this.toastrService.error('Please fill yur all Input');
+      this.toastrService.error('Please fill your all Input');
     }
   }
 }
