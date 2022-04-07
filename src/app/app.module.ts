@@ -15,6 +15,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     FilterPipe,
     CartSummaryComponent,
     ProductAddComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
