@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'products/add',
     component: ProductAddComponent,
-    canActivate: [LoginGuard],
+    canActivate: [LoginGuard], // ProductAddComponent'i açmadan önce LoginGuard'dan geçsin Component
   },
   { path: 'login', component: LoginComponent },
 ];

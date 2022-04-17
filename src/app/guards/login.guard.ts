@@ -16,9 +16,9 @@ import { Observable } from 'rxjs';
 })
 export class LoginGuard implements CanActivate {
   constructor(
-    private authService: AuthService,
-    private router: Router,
-    private toastr: ToastrService
+    private authService: AuthService, // Kişi Authanticate mi?
+    private toastr: ToastrService, // Bilgi vermek için
+    private router: Router // Authanticate olmayan kişiyi Login Componentine yönlendirmek için.
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -29,10 +29,12 @@ export class LoginGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (this.authService.isAuthenticated()) {
-      return true;
+      // Eğer kişi Authanticate ise (Application içinde token varsa)
+      return true; // True döndür
     } else {
-      this.router.navigate(['login']);
-      this.toastr.error('Giriş Yapmalısınız', 'Yetki Hatası');
+      //yoksa
+      this.router.navigate(['login']); // Navigate this User to login route'una gönderiyor (Dolaylı olarak Login componentine yani)
+      this.toastr.error('Giriş Yapmalısınız', 'Yetki Hatası'); // And Show it a error Message
       return false;
     }
   }

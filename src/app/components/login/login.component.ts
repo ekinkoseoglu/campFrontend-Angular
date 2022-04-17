@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       let loginModel = Object.assign({}, this.loginFormGroup.value);
       this.authService.login(loginModel).subscribe(
         (response) => {
-          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('token', response.data.token); // Gelen Response içindeki Data'nın içindeki token key'ini "token" isminde bir ad ile localStorage de saklıyoruz.
           console.log(response.data);
         },
         (responseError) => {

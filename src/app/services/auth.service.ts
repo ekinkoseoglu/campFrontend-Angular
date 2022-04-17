@@ -21,10 +21,12 @@ export class AuthService {
   }
 
   isAuthenticated() {
+    // Guardda kullanılmak için
     if (localStorage.getItem('token')) {
-      return true;
+      // Eğer "Application" sectionu içinde token'i varsa
+      return true; // True döndür
     } else {
-      return false;
+      return false; // False döndür
     }
   }
 }

@@ -42,7 +42,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ReactiveFormsModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, // Yazdığımız"AuthInterceptor" unu bu modüldeki bütün Http Servicelerimizde yazdığımız "HttpClient" ile yaptığımız Requestlerimize enjekte etmiş oluyoruz.
+
+    // Yani Bu modüldeki bütün Requestler önce bu Interceptorden geçerek servera gönderiliyor
   ],
   bootstrap: [AppComponent],
 })
