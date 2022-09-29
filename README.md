@@ -1,4 +1,4 @@
-This is the Frontend side of my CarRental Project which is structured with Angular 13
+This is the Frontend side of my E-Commerce Prototype Project which is structured with Angular 13
 
 ## Used Technologies And Principles
 
